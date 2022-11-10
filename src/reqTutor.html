@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Open Source Learning</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+         crossorigin="anonymous">  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+         integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">  
+         <link rel="stylesheet" href="reqTutor.css" />
+         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  -->
+        <script src = "reqTutor.js" defer></script>
+    </head>
+        
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">OSL</a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="#">Classes</a></li>
+                  <li><a href="#">Resources</a></li>
+                  <li><a href="reqTutor.html">Request Tutor</a></li>
+                  <li><a href="tutee_list.html">Tutee List</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href = "#"> Careers</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                </ul>
+              </div>
+            </nav>
+            <form>
+                <div class="row">
+                <div class="form-group col-xs-2">
+                  <label for="getName">Name</label>
+                  <input type="text" class="form-control" id="tutee-name" placeholder="John Doe">
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-xs-2">
+                    <label for="getEmail">Email</label>
+                    <input type="email" class="form-control" id="tutee-email" placeholder="example@domain.com">
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-xs-5">
+                    <label for="getClasses">Courses you need help with</label>
+                    <input type="text" class="form-control" id="courses" placeholder="e.g CS121...">
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-xs-5">
+                  <label for="getYear">Year</label>
+                  <select class="form-control" id="year">
+                    <option>Freshman</option>
+                    <option>Sophomore</option>
+                    <option>Junior</option>
+                    <option>Senior</option>
+                  </select>
+                </div>
+                </div>
+                <div class="row">
+                <div class="form-group col-xs-5">
+                  <label for="description">Please provide a description of what you need help with</label>
+                  <textarea class="form-control" id="description" rows="5"></textarea>
+                </div>
+                </div>
+              </form>
+              <button type = "button" id = "tutee-submit">Submit!</button>
+        <!-- <div class="containerbgWhite">
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <center><h2 style="color: black"> Open Source Learning</h2></center>
+                </div>
+              </nav>
+            <div id="yellowSideBar">
+                <p> Home </p>
+                <p> Resource </p>
+                <p> Tutor </p>
+                <p> Contact Us </p>
+            </div>
+        </div>
+        <div id="grayTutorbox">
+            <p>About me</p>
+            <p>Contact Info</p>
+        </div> -->
+
+
+    </body>
+</html>

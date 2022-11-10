@@ -1,0 +1,65 @@
+html,body {
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.navbar-brand {
+    font-size:50px;
+    color:red !important;
+    font-weight:bold;
+}
+.nav.navbar-nav li a {
+    font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white !important;
+    background:transparent;
+    box-shadow:none;
+    border:0;
+}
+.navbar.navbar-inverse {
+    background:transparent;
+    box-shadow:none;
+}
+h1 {
+    color:orangered;
+    font-weight:bold;
+    font-size:80px;
+}
+h2 {
+    text-align: center;
+    color:white;
+    font-size:50px;
+
+}
+.welcome {
+    background-color: transparent;
+    margin:auto;
+    width:60%;
+    top:40%;
+    left:20%;
+    position:absolute;
+    text-align:center;
+}
+
+.tutoring {
+    float:right;
+    padding-right:50px;
+}
+.containerbgWhite{
+    background-color:white;
+    margin-top:100px;
+}
+
+.title{
+    color: red
+}
+
+.form-group {
+    margin-left:25%;
+}
+#tutee-submit {
+    margin-left:25%;
+}
+label {
+    color:white;
+}
