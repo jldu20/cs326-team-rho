@@ -27,7 +27,7 @@ This is the resource page that has a search bar to search for resources relating
 
 <img src="Resources Links.png" width="350" title="Resource Links">
 
-This is a rough outline of a tutee profile. The tutee will be able to create a profile and is able to edit it. This is where the user can create, update and deleate a profile.
+This is a rough outline of a tutee profile. The tutee will be able to create a profile and is able to edit it. This is where the user can create, update and delete a profile.
 
 <img src="Tutee Profile.png" width="350" title="Tutee Profile">
 
