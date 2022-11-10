@@ -12,12 +12,25 @@ Become a tutor form: POST request Create a profile for yourself with Qualificati
 
 Edit Profile: Put request Change any information or add anything new
 
-View Resorces by Class: GET request returns list of videos for a given class
+View Resources by Class: GET request returns list of videos for a given class
 
 
 URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
 
 Breakdown:
 Jerry: Revamped UI for request tutor, heroku deploy
+Gordon: Revamped UI for Resources
+Hadi: Revamped UI for tutee list
 
-Testing
+
+This is the resource page that has a search bar to search for resources relating to the search input. Also has links that the user can click to view resoruces relating to a classlevel. This is where the user can READ data. 
+
+<img src="Resources Links.png" width="350" title="Resource Links">
+
+This is a rough outline of a tutee profile. The tutee will be able to create a profile and is able to edit it. This is where the user can create, update and deleate a profile.
+
+<img src="Tutee Profile.png" width="350" title="Tutee Profile">
+
+This is a tutor application page where one can sign up to be a tutor. This is another create operation. 
+
+<img src="Tutor Application.png" width="350" title="Tutor Application">
