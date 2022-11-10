@@ -17,5 +17,6 @@ View Resorces by Class: GET request returns list of videos for a given class
 
 URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
 
-Breakdown: Revamped UI for request tutor, heroku deploy
+Breakdown:
+Jerry: Revamped UI for request tutor, heroku deploy
 
