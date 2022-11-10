@@ -1,0 +1,33 @@
+{
+  "name": "cs326-final-rho",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node":"18.12.1",
+    "npm":"8.19.2"
+  }
+  ,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jldu20/cs326-final-rho.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jldu20/cs326-final-rho/issues"
+  },
+  "homepage": "https://github.com/jldu20/cs326-final-rho#readme",
+  "dependencies": {
+    "express":"*",
+    "body-parser":"*"
+  }
+}
