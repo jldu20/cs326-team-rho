@@ -3,17 +3,10 @@ html,body {
     background-repeat:no-repeat;
     background-size:cover;
 }
-/* p{
-    border-width:3px; 
-    width: 300px;
-    height: 300px;
-    border-style:solid; 
-    border-color:#FF0000;
-} */
 .student_card{
     border-width:3px; 
     width: 600px;
-    height: 400px;
+    height: 345px;
     border-style:solid; 
     border-color:#FF0000;
     margin: auto;
@@ -55,3 +48,44 @@ html,body {
     color: white;
     font-size: 15px;
 }
+#help_me{
+    top: 200px;
+    bottom: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    zoom: 2;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: red;
+    background-color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 7px;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 9px;
+}
+  
+/* .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} */

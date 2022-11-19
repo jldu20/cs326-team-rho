@@ -90,6 +90,39 @@ h3{
     float: left;
     width: 90%;
     border: 1px solid green;
+}
 
-    
+.dropdown {
+    position: relative;
+    display: inline-block;
+    zoom: 2;
+    left: -20px;
+    top: -30px;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: red;
+    background-color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 7px;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 9px;
 }

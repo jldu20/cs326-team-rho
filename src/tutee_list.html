@@ -29,7 +29,17 @@
                       <li><a href = "#"> Careers</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                      <div class="dropdown">
+                        <div class="dropbtn">
+                            <img src="uknownuser.webp" width="20px" id="card-image"><br>
+                        </div>
+                        <div class="dropdown-content">
+                          <a href="#">My Account</a>
+                          <a href="#">Update Profile</a>
+                          <a href="#">Delete Profile</a>
+                          <a href="#">Create Profile</a>
+                        </div>
+                      </div>
                     </ul>
                   </div>
                 </nav>
@@ -45,22 +55,24 @@
         <div class="card" style="width: 18rem;">
             <div class="card_info">
                 <div id="student_id">
-                    <img src="uknownuser.webp" width="125px" title="hover text" id="card-image"><br>
+                    <img src="uknownuser.webp" width="125px" id="card-image"><br>
                     <p id="card-name">Jerry Du</p>
                 </div>
                 <div id="help_info">
-                    <p id="card-courses">Requested Course: cs326</p>
-                    <p id="card-year">Year: Junior</p>
-                    <p id="card-description">Description of Help Needed:</p>
-                    <p id="card-description">&emsp;&emsp;Needs help with css syntax and understanding</p>
+                    <p class="card-center" style="width: 100rem;" id="card-courses">&emsp;&emsp;&emsp;&emsp;&emsp;Requested Course: cs326</p>
+                    <p class="card-center" id="card-year">&emsp;&emsp;&emsp;&emsp;&emsp;Year: Junior</p>
+                    <p class="card-center" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Description of Help Needed:</p>
+                    <p class="card-cente" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Needs help with css syntax and understanding</p>
                     <br><br><br>
-                    <p id="card-contact_info">Contact Info: </p>
-                    <p id="card-email">Email: example@domain.com</p>
+                    <p class="card-center" id="card-contact_info">&emsp;&emsp;&emsp;&emsp;&emsp;Contact Info: </p>
+                    <p class="card-center" id="card-email">&emsp;&emsp;&emsp;&emsp;&emsp;Email: example@domain.com</p>
                 </div>
             </div>
         </div>
-            <button type="button">Edit card</button>
-            <button type="button">Delete card</button>
+        <div class="text-left" id="help_me">
+            <button type="button" class="btn btn-dark">Help Me!</button>
         </div>
+        </div>
+        
     </body>
 </html>
