@@ -1,7 +1,7 @@
 document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
     const yearSelect = document.getElementById("year");
     const data = {
-        "Name": document.getElementById("card-name").value,
+        "Name": document.getElementById("card-name").innerHTML,
         "Email": document.getElementById("email").value,
         "Course": document.getElementById("course_title").value,
         "Grade": yearSelect.options[yearSelect.selectedIndex].text,
