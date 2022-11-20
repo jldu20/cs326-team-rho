@@ -1,4 +1,4 @@
-document.getElementById("updateProfileBTN-submit").addEventListener("click", ()=> {
+document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
     const yearSelect = document.getElementById("year");
     const data = {
         "Name": document.getElementById("card-name").value,
