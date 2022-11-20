@@ -57,25 +57,29 @@ html,body {
 #course_title{
     position: absolute;
     left: 770px;
-    top: 281px;
+    top: 235px;
+    color: black;
 }
 
 #year{
     position: absolute;
     left: 675px;
-    top: 337px;
+    top: 295px;
+    color:black
 }
 
 #description_box{
     position: absolute;
     left: 625px;
-    top: 395px;
+    top: 355px;
+    color: black;
 }
 
 #email{
     position: absolute;
     left: 680px;
-    top: 503px;
+    top: 460px;
+    color: black;
 }
 
 .dropdown {
