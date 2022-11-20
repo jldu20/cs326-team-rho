@@ -1,12 +1,12 @@
 Student structure for database:
-
     student document
     {
 	    _id: <ObjectId1>,
-	    student_name: String,  // The name of the student
-	    school_year: Integer,  // The school year the student is in
-        description_of_help: String, // Description for what the student needs help with
-        email: String // The students UMass email so tutor can contact student
+	    Name: String,  // The name of the student
+        Email: String // The students UMass email so tutor can contact student
+        Course: String
+        Grade: String
+        Description: 
 
     }
 
