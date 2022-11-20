@@ -5,5 +5,31 @@ document.getElementById("tutee-submit").addEventListener("click", ()=> {
     const email = document.getElementById("tutee-email");
     const courses = document.getElementById("courses");
     const grade = yearSelect.options[yearSelect.selectedIndex].text;
-    alert(grade);
+    const description = document.getElementById("description")
+ 
+    const data = {
+        "Name": name.value,
+        "Email": email.value,
+        "Course": courses.value,
+        "Grade": grade,
+        "Description" : description.value
+    };
+    
+    console.log(data)
+    fetch('http://localhost:3000/requestTutor', {
+    method: 'POST', // or 'PUT'
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    })
+    .then((response) => response)
+    .then((data) => {
+        console.log('Success:', data);
+        console.log(data)
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
 })
