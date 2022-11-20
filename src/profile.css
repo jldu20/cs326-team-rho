@@ -1,0 +1,116 @@
+html,body {
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.student_card{
+    border-width:3px; 
+    width: 600px;
+    height: 345px;
+    border-style:solid; 
+    border-color:#FF0000;
+    margin: auto;
+    display: table;
+}
+.card_info{
+    display: table-row;
+}
+.navbar-brand {
+    font-size:50px;
+    color:red !important;
+    font-weight:bold;
+}
+.nav.navbar-nav li a {
+    font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white !important;
+    background:transparent;
+    box-shadow:none;
+    border:0;
+}
+.navbar.navbar-inverse {
+    background:transparent;
+    box-shadow:none;
+}
+.title{
+    color: red
+}
+
+#student_id{
+    display: table-cell
+}
+#card-name{
+    color: white;
+    font-size: 20px;
+}
+#help_info{
+    display: table-cell;
+    color: white;
+    font-size: 15px;
+}
+#help_me{
+    top: 200%;
+    bottom: 0;
+}
+
+#course_title{
+    position: absolute;
+    left: 770px;
+    top: 281px;
+}
+
+#year{
+    position: absolute;
+    left: 675px;
+    top: 337px;
+}
+
+#description_box{
+    position: absolute;
+    left: 625px;
+    top: 395px;
+}
+
+#email{
+    position: absolute;
+    left: 680px;
+    top: 503px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    zoom: 2;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: red;
+    background-color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 7px;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 9px;
+}
+  
+/* .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} */

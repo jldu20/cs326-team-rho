@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Open Source Learning</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous"> <!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript --> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="profile.css" />
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+        <script src = "reqTutor.js" defer></script>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <a class="navbar-brand" href="#">OSL</a>
+                  </div>
+                  <ul class="nav navbar-nav">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="#">Classes</a></li>
+                      <li><a href="resources.html">Resources</a></li>
+                      <li><a href="reqTutor.html">Request Tutor</a></li>
+                      <li><a href="tutee_list.html">Tutee List</a></li>
+                      <li><a href="#">About us</a></li>
+                      <li><a href = "#"> Careers</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                      <div class="dropdown">
+                        <div class="dropbtn">
+                            <img src="uknownuser.webp" width="20px" id="card-image"><br>
+                        </div>
+                        <div class="dropdown-content">
+                          <a href="#">My Account</a>
+                          <a href="#">Update Profile</a>
+                          <a href="#">Delete Profile</a>
+                          <a href="#">Create Profile</a>
+                        </div>
+                      </div>
+                    </ul>
+                  </div>
+                </nav>
+        </div>
+       <div>
+            <div class="title">
+                <center><h3>My Profile </h3></center>
+            </div>
+            <br><br><br><br>
+            <center><div class="box"></div></center>
+        </div>
+        <input type="text" id="course_title"><br>
+        <select id="year">
+            <option value="horizontal">Freshman</option>
+            <option value="vertical">Sophmore</option>
+            <option value="vertical">Junior</option>
+            <option value="vertical">Senior</option>
+        </select>
+        <textarea id="description_box" rows="4" cols="50"></textarea>
+        <input type="text" id="email"><br>
+        <div class="student_card">
+        <div class="card" style="width: 18rem;">
+            <div class="card_info">
+                <div id="student_id">
+                    <img src="uknownuser.webp" width="125px" id="card-image"><br>
+                    <p id="card-name">Jerry Du</p>
+                </div>
+                <div id="help_info">
+                    <p class="card-center" style="width: 150rem;" id="card-courses">&emsp;&emsp;&emsp;&emsp;&emsp;Requested Course: </p><br>
+                    <p class="card-center" id="card-year">&emsp;&emsp;&emsp;&emsp;&emsp;Year: </p>
+                    <p class="card-center" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Description of Help Needed:</p>
+                    <br><br><br><br><br>
+                    <p class="card-center" id="card-email">&emsp;&emsp;&emsp;&emsp;&emsp;Email: </p>
+                </div>
+            </div>
+        </div>
+        <div class="text-left" id="help_me">
+            <button type="button" class="btn btn-dark">Update!</button>
+        </div>
+        </div>
+        
+    </body>
+</html>
