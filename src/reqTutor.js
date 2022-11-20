@@ -44,7 +44,7 @@ document.getElementById("updateProfileBTN-submit").addEventListener("click", ()=
         "Grade": yearSelect.options[yearSelect.selectedIndex].text,
         "Description" : document.getElementById("description_box").value,
     };
-    fetch('http://localhost:3000/updateTutee', {
+    fetch('/updateTutee', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
