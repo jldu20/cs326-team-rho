@@ -25,6 +25,7 @@ let url;
 // }
 url = process.env.MONGDO_URL;
 console.log(url)
+url = "mongodb+srv://rhoMember:2bSh5JdVsCuW3TSK@rhobase.faewymn.mongodb.net/test"
 
 // create
 app.post("/requestTutor", function (req, res) {
@@ -82,10 +83,10 @@ app.post("/updateTutee", function (req, res) {
   console.log(req.body,"body")
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
-    var dbo = db.db("open_source_learning");
-    var myquery = { address: "Valley 345" };
-    var newvalues = { $set: {name: "Mickey", address: "Canyon 123" } };
-    dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
+    let dbo = db.db("open_source_learning");
+    let myquery = { Name: req.body.Name };
+    let newvalues = { $set: {Email: req.body.Email, Course: req.body.Course, Grade: req.body.Grade, Description: req.body.Description} };
+    dbo.collection("tutees").updateOne(myquery, newvalues, function(err, res) {
       if (err) throw err;
       console.log("1 document updated");
       db.close();
