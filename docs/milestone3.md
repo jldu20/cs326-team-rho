@@ -2,7 +2,8 @@ How to use the Website:
     From the home page, we have 3 pages working, resources, tutee list, request tutor. If you hover over
     the profile image in the top right of the screen there will be multiple opitions... My account, Update Profile,
     Delete Profile, and Create profile. Update profile will take you to a page where you can make changes to your current
-    profile. Delete Profile, will simply remove your profile from the MongoDB database
+    profile, Delete Profile, will simply remove your profile from the MongoDB database, and create profile will take you to the page
+    where the end user can make a profile. The search bar on the tutee list page allows you search for a specific student by name. 
 
 URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
 
@@ -17,3 +18,9 @@ Student structure for database:
         Description: String // Description of the kind of help the tutee wants from the tutor
 
     }
+
+Breakdown:
+Jerry: secret keys for database access as well as worked on creating cards in 
+tutee list when submit button is clicked on the request tutor page
+Gordon: Connected frontend to backend as well as set up mongodb connection
+Hadi: Revamped UI for multiple pages 
