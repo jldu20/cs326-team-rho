@@ -27,14 +27,10 @@ document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
 });
 
 document.getElementById("deleteProfileBtn").addEventListener("click", ()=> {
-    const yearSelect = document.getElementById("year");
     const data = {
         "Name": document.getElementById("card-name").innerHTML,
-        "Email": document.getElementById("email").value,
-        "Course": document.getElementById("course_title").value,
-        "Grade": yearSelect.options[yearSelect.selectedIndex].text,
-        "Description" : document.getElementById("description_box").value,
     };
+    
     console.log(data)
     fetch('/deleteTutee', {
         method: 'DELETE', // or 'PUT'
