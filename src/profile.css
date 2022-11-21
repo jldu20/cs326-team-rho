@@ -57,28 +57,28 @@ html,body {
 #course_title{
     position: absolute;
     left: 770px;
-    top: 302px;
+    top: 240px;
     color: black;
 }
 
 #year{
     position: absolute;
     left: 675px;
-    top: 355px;
+    top: 295px;
     color:black
 }
 
 #description_box{
     position: absolute;
     left: 625px;
-    top: 440px;
+    top: 370px;
     color: black;
 }
 
 #email{
     position: absolute;
     left: 680px;
-    top: 585px;
+    top: 525px;
     color: black;
 }
 
@@ -114,42 +114,3 @@ html,body {
     display: block;
     right: 9px;
 }
-
-#tutee_search{
-    position: absolute;
-    left: 600px;
-    top: 150px;
-}
-
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    /* width: 80%; */
-    background: #f1f1f1;
-  }
-  
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    /* width: 20%; */
-    padding: 10px;
-    background: red;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }

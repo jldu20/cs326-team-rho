@@ -85,7 +85,38 @@ html,body {
     display: block;
     right: 9px;
 }
+
+#tutee_search{
+    position: absolute;
+    left: 600px;
+    top: 150px;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    background: #f1f1f1;
+  }
   
-/* .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-} */
+form.example button {
+    float: left;
+    padding: 10px;
+    background: red;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+}
+  
+form.example button:hover {
+    background: #0b7dda;
+}
+  
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+}
