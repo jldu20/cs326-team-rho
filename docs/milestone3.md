@@ -1,8 +1,8 @@
 How to use the Website:
     From the home page, we have 3 pages working, resources, tutee list, request tutor. If you hover over
     the profile image in the top right of the screen there will be multiple opitions... My account, Update Profile,
-    Delete Profile, and Create profile. As of now the only link that works is update profile. We hope to use this dropdown
-    as an easy way for the user to preform the CRUD operations on their profile. 
+    Delete Profile, and Create profile. Update profile will take you to a page where you can make changes to your current
+    profile. Delete Profile, will simply remove your profile from the MongoDB database
 
 URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
 
