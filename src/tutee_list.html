@@ -10,7 +10,30 @@
         <link rel="stylesheet" href="tutee_list.css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
-        
+        <script>
+          function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+          
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[0];
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          </script>
+          <script src = "tutee_list.js" defer></script>
     </head>
     <body>
         <div>
@@ -44,39 +67,43 @@
                   </div>
                 </nav>
         </div>
-       <div>
-            <div class="title">
-                <center><h3>Tutee List Open Source Learning </h3></center>
-            </div>
-            <br><br><br><br>
-            <form id="tutee_search" class="example" action="action_page.php">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
-            </form><br><br><br>
-            <center><div class="box"></div></center>
-        </div>
-        <div class="student_card">
-        <div class="card" style="width: 18rem;">
-            <div class="card_info">
-                <div id="student_id">
-                    <img src="uknownuser.webp" width="125px" id="card-image"><br>
-                    <p id="card-name">Jerry Du</p>
-                </div>
-                <div id="help_info">
-                    <p class="card-center" style="width: 100rem;" id="card-courses">&emsp;&emsp;&emsp;&emsp;&emsp;Requested Course: cs326</p>
-                    <p class="card-center" id="card-year">&emsp;&emsp;&emsp;&emsp;&emsp;Year: Junior</p>
-                    <p class="card-center" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Description of Help Needed:</p>
-                    <p class="card-cente" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Needs help with css syntax and understanding</p>
-                    <br><br><br>
-                    <p class="card-center" id="card-contact_info">&emsp;&emsp;&emsp;&emsp;&emsp;Contact Info: </p>
-                    <p class="card-center" id="card-email">&emsp;&emsp;&emsp;&emsp;&emsp;Email: example@domain.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-left" id="help_me">
-            <button type="button" class="btn btn-dark">Help Me!</button>
-        </div>
-        </div>
+        
+          
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+        <table id="myTable">
+          <tr class="header">
+            <th style="width:10%;">Name</th>
+            <th style="width:10%;">Email</th>
+            <th style="width:10%;">Grade</th>
+            <th style="width:70%;">Description</th>
+          </tr>
+          <tr>
+            <td>Jerry Du</td>
+            <td>jldu@umass.edu</td>
+            <td>Junior</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+          </tr>
+          <td>Gordon Chen</td>
+            <td>gordonchen@umass.edu</td>
+            <td>Senior</td>
+            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+          </tr>
+          <td>Hadi Abdelghany</td>
+          <td>habdelghany@umass.edu</td>
+          <td>Senior</td>
+          <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</td>
+        </tr>
+        </table>
         
     </body>
 </html>
