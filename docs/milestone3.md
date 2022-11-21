@@ -5,7 +5,6 @@ How to use the Website:
     profile, Delete Profile, will simply remove your profile from the MongoDB database, and create profile will take you to the page
     where the end user can make a profile. The search bar on the tutee list page allows you search for a specific student by name. 
 
-URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
 
 Student structure for database:
     student document
