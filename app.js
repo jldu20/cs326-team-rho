@@ -68,7 +68,7 @@ app.delete("/deleteTutee", function (req, res) {
     if (err) throw err;
     var dbo = db.db("open_source_learning");
     var myquery = deleteObj
-    dbo.collection("customers").deleteOne(myquery, function(err, obj) {
+    dbo.collection("tutees").deleteOne(myquery, function(err, obj) {
       if (err) throw err;
       console.log("1 document deleted");
       res.send("Deleted")
@@ -76,6 +76,8 @@ app.delete("/deleteTutee", function (req, res) {
     });
   });
 });
+
+
 // update
 app.post("/updateTutee", function (req, res) {
   // Need to save current profile and update
