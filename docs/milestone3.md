@@ -20,7 +20,15 @@ Student structure for database:
     }
 
 Breakdown:
-Jerry: secret keys for database access as well as worked on creating cards in 
-tutee list when submit button is clicked on the request tutor page
-Gordon: Connected frontend to backend as well as set up mongodb connection
-Hadi: Revamped UI for multiple pages 
+Jerry: 
+    secret keys for database access. 
+    creating cards in tutee list when submit button is clicked on the request tutor page
+    worked on search button in tutee list to filter out names of tutees
+
+Gordon: 
+    Connected frontend to backend
+    set up mongodb connection and database interaction
+
+Hadi: 
+    Revamped UI for multiple pages 
+    Added search bar and dropdown menu
