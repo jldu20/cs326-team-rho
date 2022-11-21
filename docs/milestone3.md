@@ -22,7 +22,7 @@ Breakdown:
 Jerry: 
     secret keys for database access. 
     creating cards in tutee list when submit button is clicked on the request tutor page
-    worked on search button in tutee list to filter out names of tutees
+    worked on search button in tutee list to filter out names of tutees -> Connected tutee list to MongoDB to get the list of tuteees and append info to table
 
 Gordon: 
     Connected frontend to backend
