@@ -3,7 +3,6 @@ document.getElementById("dbSearch").addEventListener("click", ()=> {
 
   fetch('/getTutee',{
     method:"GET",
-    mode:"no-cors",
     headers: { 
       'Accept': 'application/json',
       'Content-Type': 'application/json' 
