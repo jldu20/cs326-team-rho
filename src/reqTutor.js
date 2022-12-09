@@ -23,7 +23,7 @@ document.getElementById("tutee-submit").addEventListener("click", ()=> {
     },
     body: JSON.stringify(data),
     })
-    .then((response) => response)
+    .then((response) => console.log(response))
     .then((data) => {
         console.log('Success:', data);
         console.log(data)
