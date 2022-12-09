@@ -1,4 +1,3 @@
-tuteeList_revamp
 
 document.getElementById("dbSearch").addEventListener("click", ()=> {
 
