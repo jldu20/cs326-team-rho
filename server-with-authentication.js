@@ -1,9 +1,9 @@
 'use strict';
 
 // For loading environment variables.
-require('dotenv').config();
+// require('dotenv').config();
 
-const express = require('express');                 // express routing
+const express = require("express")
 const expressSession = require('express-session');  // for managing session state
 const passport = require('passport');               // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
