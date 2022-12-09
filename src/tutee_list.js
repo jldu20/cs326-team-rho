@@ -1,8 +1,8 @@
 
 document.getElementById("dbSearch").addEventListener("click", ()=> {
   let x = fetch('/getTutee');
-  console.log(x.json);
-
+  console.log(x);
+  
   
 })
 
