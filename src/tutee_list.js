@@ -1,9 +1,17 @@
 
 document.getElementById("dbSearch").addEventListener("click", ()=> {
-  let x = fetch('/getTutee');
-  console.log(x);
-  
-  
+
+  fetch('/getTutee',{
+    method:"GET",
+    body: JSON.stringify(data),
+    mode:"no-cors",
+    headers: { 
+      'Accept': 'application/json',
+      'Content-Type': 'application/json' 
+    }
+  })
+  .then(response => response.json());
+
 })
 
 
