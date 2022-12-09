@@ -50,8 +50,8 @@ app.get("/getTutee", function (req, res) {
 
     dbo.collection("tutees").find().toArray(function(err, result) {
       if (err) throw err;
-      console.log(result);
-      res.send(result)
+      console.log(result,"aaa");
+      res.send("Hello")
       db.close();
     });
   });
