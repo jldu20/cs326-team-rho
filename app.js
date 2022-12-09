@@ -51,7 +51,7 @@ app.get("/getTutee", function (req, res) {
     dbo.collection("tutees").find().toArray(function(err, result) {
       if (err) throw err;
       console.log(result,"aaa");
-      res.send("Hello")
+      res.send(result)
       db.close();
     });
   });

@@ -4,6 +4,7 @@ document.getElementById("dbSearch").addEventListener("click", ()=> {
   fetch('/getTutee')
   .then(function(response) {
     console.log(response)
+    return 
   })
 
 
