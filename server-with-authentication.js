@@ -18,6 +18,13 @@ let url = "mongodb+srv://rhoMember:2bSh5JdVsCuW3TSK@rhobase.faewymn.mongodb.net/
 app.use(express.static("src"))
 app.use(bodyParser.json())
 
+const cors=require("cors");
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+app.use(cors(corsOptions)) // Use this after the variable declaration
 
 /// NEW
 const minicrypt = require('./miniCrypt');
@@ -149,6 +156,7 @@ app.post('/login',
 	}),
     function (req, res){
         const login_info = req.body;
+		console.log("this is body", req.body)
         MongoClient.connect(url, function(err, db){
             if (err) throw err;
             let dbo = db.db("open_source_learning");
