@@ -15,6 +15,9 @@ const bodyParser = require('body-parser');
 let MongoClient = require('mongodb').MongoClient;
 let url = "mongodb+srv://rhoMember:2bSh5JdVsCuW3TSK@rhobase.faewymn.mongodb.net/test"
 
+app.use(express.static("src"))
+app.use(bodyParser.json())
+
 
 /// NEW
 const minicrypt = require('./miniCrypt');
