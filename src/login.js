@@ -15,5 +15,13 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user_data),
+    })
+    .then((response) => console.log(response))
+    .then((data) => {
+        console.log('Success:', data);
+        console.log(data)
+    })
+    .catch((error) => {
+        console.error('Error:', error);
     });
 });
