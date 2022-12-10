@@ -99,18 +99,18 @@ app.post("/updateTutee", function (req, res) {
 app.post('/login', function (req, res){
     const login_info = req.body;
 		console.log("this is body", req.body)
-        MongoClient.connect(url, function(err, db){
-            if (err) throw err;
-            let dbo = db.db("open_source_learning");
-            if (dbo.collection.count_documents(login_info)){
-              console.log("exist")
-            }
-            else{
-              console.log("DNE")
-            }
+      MongoClient.connect(url, function(err, db){
+          if (err) throw err;
+          let dbo = db.db("open_source_learning");
+          if (dbo.collection("login_info").count_documents(login_info)){
+            console.log("exist")
+          }
+          else{
+            console.log("DNE")
+          }
 
 
-        })
+      })
     }
 );
 
