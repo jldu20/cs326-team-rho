@@ -1,4 +1,4 @@
-document.getElementById("log-in-button").addEventListener("click", ()=>{
+document.getElementById("log-in-button").addEventListener("click", async ()=>{
     const username = document.getElementById("user_username");
     const password = document.getElementById("user_password");
 
@@ -9,11 +9,13 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
 
     console.log("this is data: ", user_data);
 
-    const response = fetch('/login',{
+    const response = await fetch('/login',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(user_data),
     });
+    const data = await response.json()
+    console.log("Success", data)
 });
