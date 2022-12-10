@@ -2,31 +2,45 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-        <title>Authentication Practice</title>
+        <title>Open Source Learning</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-        crossorigin="anonymous"> <!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
-        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript --> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="profile.css" />
+        crossorigin="anonymous"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" 
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="login.css" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
         <script src = "login.js" defer></script>
   </head>
   <body>
-    <h1>Login</h1>
-      <div>
-        <label>Username:</label>
-        <input type="text" name="username" id="user_username"/>
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" name="password" id="user_password"/>
-      </div>
-      <div>
-        <button type = "button" id = "log-in-button">Log In</button>
-        <br />
-        <a href="register.html">Register</a>
-        
-      </div>
+    <h1 id="title">Open Source Learning</h1>
+    <center>
+        <div class="container">
+            <div class="box">
+                <div class="login_things">
+                    <h1 id="login_title">Login</h1>
+                    <br><br>
+                    <div class="user_info">
+                        <div>
+                            <label id="nameUser">Username:</label>
+                            <input type="text" name="username" id="user_username"/>
+                        </div>
+                        <br>
+                        <div>
+                            <label id="passUser">Password:</label>
+                            <input type="password" name="password" id="user_password"/>
+                        </div>
+                        <br>
+                        <button type = "button" id = "log-in-button">Log In</button>
+                        <div>
+                            <br>
+                            <p id="or">or</p>
+                            <button type = "button" id = "register-button">Register!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </center>
+    
   </body>
 </html>

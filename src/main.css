@@ -21,7 +21,7 @@ html,body {
     box-shadow:none;
 }
 h1 {
-    color:orangered;
+    color: red!important;;
     font-weight:bold;
     font-size:80px;
 }
