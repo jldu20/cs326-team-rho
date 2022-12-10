@@ -27,7 +27,7 @@ const corsOptions ={
 app.use(cors(corsOptions)) // Use this after the variable declaration
 
 /// NEW
-const minicrypt = require('./miniCrypt');
+const minicrypt = require('/src/minicrypt');
 const mc = new minicrypt();
 
 // Session configuration
