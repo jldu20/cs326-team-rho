@@ -16,6 +16,4 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
         },
         body: JSON.stringify(user_data),
     });
-    const data = response.json()
-    console.log("Success", data)
 });
