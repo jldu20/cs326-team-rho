@@ -68,6 +68,20 @@ app.get("/accAuth", function (req, res) {
     });
   });
 });
+app.post("/addUser", function (req, res) {
+  console.log(req.body,"body")
+  const submitObj = req.body;
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    let dbo = db.db("open_source_learning");
+    dbo.collection("login_info").insertOne(submitObj, function(err, res) {
+        if (err) throw err;
+        console.log("1 document inserted");
+        db.close();
+    });
+  res.sendStatus(201)
+  });
+});
 app.delete("/deleteTutee", function (req, res) {
   // body: {Name:xxx , Email:xxx}
   console.log(req.body,"body")
@@ -84,6 +98,7 @@ app.delete("/deleteTutee", function (req, res) {
     });
   });
 });
+
 
 
 // update
@@ -103,6 +118,37 @@ app.post("/updateTutee", function (req, res) {
     });
   });
 });
+
+app.post('/addVideo', function (req, res){
+  const submitObj = req.body;
+
+  console.log("this is body", req.body)
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    let dbo = db.db("open_source_learning");
+    dbo.collection("videos").insertOne(submitObj, function(err, res) {
+        if (err) throw err;
+        console.log("1 document inserted");
+        db.close();
+    });
+  res.sendStatus(201)
+  });
+  }
+);
+app.get("/getVideo", function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    let dbo = db.db("open_source_learning");
+
+    dbo.collection("videos").find().toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result,"videos");
+      res.send(result)
+      db.close();
+    });
+  });
+});
+
 app.post('/login', function (req, res){
   const login_info = req.body;
   console.log("this is body", req.body)
@@ -120,13 +166,13 @@ app.post('/login', function (req, res){
     })
   }
 );
+
 //LOGIN STUFF
 const expressSession = require('express-session');  // for managing session state
 const passport = require('passport');               // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 
 app.use(express.static("src"))
-
 
 /// NEW
 const minicrypt = require('./src/minicrypt.js');
@@ -168,6 +214,11 @@ passport.use(strategy);
 app.use(passport.initialize());
 app.use(passport.session());
 
+// app.use(session({
+//   secret: "total_secret",
+//   resave:false,
+//   saveUninitialized:false,
+// }))
 // Convert user object to a unique identifier.
 passport.serializeUser((user, done) => {
     done(null, user);
@@ -275,13 +326,13 @@ app.post('/login',
 
 // Handle the URL /login (just output the login.html file).
 app.get('/login',
-	(req, res) => res.sendFile('html/login.html',
+	(req, res) => res.sendFile('./src/login.html',
 				   { 'root' : __dirname }));
 
 // Handle logging out (takes us back to the login page).
 app.get('/logout', (req, res) => {
     req.logout(); // Logs us out!
-    res.redirect('/login'); // back to login
+    res.redirect('./src/login.html'); // back to login
 });
 
 
@@ -302,7 +353,7 @@ app.post('/register',
 
 // Register URL
 app.get('/register',
-	(req, res) => res.sendFile('html/register.html',
+	(req, res) => res.sendFile('./src/login.html',
 				   { 'root' : __dirname }));
 
 // Private data
@@ -331,10 +382,6 @@ app.get('*', (req, res) => {
 });
 
 
-
-
-
-  
 // start the server listening for requests
 app.listen(process.env.PORT || 3000, 
 	() => console.log(`Server is running`));

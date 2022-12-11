@@ -10,6 +10,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+        <script src = "resources.js" defer></script>
+
     </head>
     <body>
         <div>
@@ -50,32 +52,24 @@
                 <center>Resources</center>
             </div>
             <br>
+            
+              <input type="text" id = "add_vid_input" placeholder="Embeded URL" name="search">
+              <button type = "button" id = "addVid-button">Add</button>
+
             <!-- CANT get it to be completely side by side -->
             <div id="wrapper">
-                <div id="left_nav_bar">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                    <button class="dropdown-btn">Courses
-                        
-                      </button>
+
+
+                    <!-- <button class="dropdown-btn">Courses</button>
                       <div class="dropdown-container">
                         <a href="#">100 Lvl</a>
                         <a href="#">200 Lvl</a>
                         <a href="#">300 Lvl</a>
                         <a href="#">400 Lvl</a>
-                      </div>
+                      </div> -->
     
-                    <h3>Contact Us</h3>
-                </div id = "vid-container">
-                    <iframe width="800" height="500" src="https://www.youtube.com/embed/p60rN9JEapg">
-                    </iframe>
-                    <br>
-                    <br>
-                    <iframe width="800" height="500" src="https://www.youtube.com/embed/FyBdA61GmJ0"></iframe>
-                    
-                <div>
+
+                <!-- </div id="vid-container"><div> -->
             </div>
 
                 
@@ -99,4 +93,5 @@
         }
     </script>
     </body>
+
 </html>
