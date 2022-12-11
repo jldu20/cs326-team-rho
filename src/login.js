@@ -1,4 +1,4 @@
-
+let user = "";
 document.getElementById("log-in-button").addEventListener("click", ()=>{
     const username = document.getElementById("user_username");
     const password = document.getElementById("user_password");
@@ -21,6 +21,16 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
                 if(arr[i].password === user_data.password) {
                     location.href = "./index.html"
                     found = true;
+                    fetch('/currUser', {
+                        method: 'POST', // or 'PUT'
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({username:user_data.username}),
+                        })
+                     fetch('/cUser', {
+                        method: 'POST', // or 'PUT'
+                     }).then(res=>res.text()).then(data=>alert(data))
                 }
             }
         }

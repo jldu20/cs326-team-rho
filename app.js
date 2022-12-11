@@ -168,7 +168,7 @@ app.post('/login', function (req, res){
 );
 
 //LOGIN STUFF
-const expressSession = require('express-session');  // for managing session state
+let expressSession = require('express-session');  // for managing session state
 const passport = require('passport');               // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
 
@@ -209,7 +209,7 @@ const strategy = new LocalStrategy(
 
 // App configuration
 
-app.use(expressSession(session));
+app.use(expressSession({secret: "its a secret!!!!!!"}));
 passport.use(strategy);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -294,13 +294,24 @@ function checkLoggedIn(req, res, next) {
 	res.redirect('/login');
     }
 }
-
-app.get('/',
-	checkLoggedIn,
+app.get('/testing', 
 	(req, res) => {
-	    res.send("hello world");
+	    // res.send(session.user)
+      res.send("Hello worldd")
 	});
-
+app.post('/currUser',
+	(req, res) => {
+	    session.user = req.body.username;
+      // res.send(session.user);
+      res.status(200)
+	});
+app.post('/cUser', 
+	function (req, res)  {
+	    // res.send(session.user)
+      // res.send(JSON.stringify(session));
+    // res.status(200).send(session.user);
+    res.send(session.user)
+	});
 // Handle post data from the login.html form.
 app.post('/login',
 	passport.authenticate('local' , {     // use username/password authentication
