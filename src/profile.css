@@ -3,7 +3,13 @@ html,body {
     background-repeat:no-repeat;
     background-size:cover;
 }
-
+.profileUD{
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+}
+div.profileUD label       { text-align:right; }
+div.profileUD label:after { content: ":"; }
 
 .student_card{
     border-width:3px; 
@@ -133,3 +139,20 @@ html,body {
     display: block;
     right: 9px;
 }
+#profileTable {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Full-width */
+    border: 1px solid #ddd; /* Add a grey border */
+    font-size: 18px; /* Increase font-size */
+    background-color: white;
+  }
+  
+  #profileTable th, #profileTable td {
+    text-align: left; /* Left-align text */
+    padding: 12px; /* Add padding */
+  }
+  
+  #profileTable tr {
+    /* Add a bottom border to all table rows */
+    border-bottom: 1px solid #ddd;
+  }
