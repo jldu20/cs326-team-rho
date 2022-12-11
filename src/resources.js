@@ -1,4 +1,6 @@
-let vidContainer = document.getElementById("vid-container");
+
+let vidContainer = document.getElementById("wrapper");
+
 console.log(vidContainer)
 document.getElementById("addVid-button").addEventListener("click", ()=> {
     const vidURL = document.getElementById("add_vid_input").value;
@@ -45,10 +47,10 @@ const res = fetch('/getVideo',{
     ifram.setAttribute("src",arr[i].video);
 
     /* Set the iframe height */
-    ifram.setAttribute("height", "800");
+    ifram.setAttribute("height", "500");
 
     /* Set the iframe width */
-    ifram.setAttribute("width", "500");
+    ifram.setAttribute("width", "800");
     console.log(ifram)
     vidContainer.appendChild(ifram)
   }
