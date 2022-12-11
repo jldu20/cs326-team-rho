@@ -21,7 +21,7 @@
                   </div>
                   <ul class="nav navbar-nav">
                       <li><a href="index.html">Home</a></li>
-                      <li><a href="#">Classes</a></li>
+                      <li><a href="class.html">Classes</a></li>
                       <li><a href="resources.html">Resources</a></li>
                       <li><a href="reqTutor.html">Request Tutor</a></li>
                       <li><a href="tutee_list.html">Tutee List</a></li>
@@ -33,7 +33,6 @@
                             <img src="uknownuser.webp" width="20px" id="card-image"><br>
                         </div>
                         <div class="dropdown-content">
-                          <a href="#">My Account</a>
                           <a href="profile.html">Update Profile</a>
                           <button type = "button" class="deletebtn" id="deleteProfileBtn">&emsp;&emsp;Delete <br>&emsp;&emsp;Profile</button>
                           <a href="reqTutor.html">Create Profile</a>
@@ -44,15 +43,66 @@
                   </div>
                 </nav>
         </div>
+
        <div>
             <div class="title">
                 &ensp;
                 <center><h3>My Profile </h3></center>
             </div>
-            <br><br><br><br>
-            <center><div class="box"></div></center>
+ 
+        </div>
+        
+        <table id="profileTable">
+            <tr class="header">
+              <th style="width:10%;">ID</th>
+              <th style="width:10%;">Name</th>
+              <th style="width:10%;">Email</th>
+              <th style="width:10%;">Courses</th>
+              <th style="width:10%;">Grade</th>
+              <th style="width:60%;">Description</th>
+            </tr>
+            
+          </table>
+        <br>
+        <div id = profileUD>
+            <label for="idfromTable">ID:</label>
+            <input type="text" id="idfromTable" name="idfromTable">
+            <br>
+            <label for="nname">New name:</label>
+            <input type="text" id="nname" name="nname">
+            <br>
+    
+            <label for="nEmail">New Email:</label>
+            <input type="text" id="nEmail" name="nEmail">
+            <br>
+ 
+            <label for="nCourse">New Course:</label>
+            <input type="text" id="nCourse" name="nCourse">
+            <br>
+
+            <label for="nGrade">New Grade:</label>
+            <input type="text" id="nGrade" name="nGrade">
+            <br>
+ 
+            <label for="nDesc">New Desc:</label>
+            <input type="text" id="nDesc" name="nDesc">
+   
+            
+            <button type="button" id = "updateProfileBTN" class="btn btn-dark">Update!</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <label for="idfromTable">ID:</label>
+            <input type="text" id="delId" name="idfromTable">
+            <br>
+            <button type="button" id = "deleteIDButton" class="btn btn-dark">Delete!</button>
+
         </div>
 
+<!-- 
         <div class="student_card">
             <div id="student_id">
                 <img src="uknownuser.webp" width="125px" id="card-image"><br>
@@ -83,7 +133,8 @@
                 </div><br><br>
                 <button type="button" id = "updateProfileBTN" class="btn btn-dark">Update!</button>
 
-            </div>
+            </div> -->
+
         </div>
     </body>
 </html>
