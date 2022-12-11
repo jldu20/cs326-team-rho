@@ -84,7 +84,7 @@ app.post("/addUser", function (req, res) {
 });
 app.delete("/deleteTutee", function (req, res) {
   // body: {Name:xxx , Email:xxx}
-  console.log(req.body,"body")
+  console.log(req.body,"app delete")
   const deleteObj = req.body;
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -92,7 +92,7 @@ app.delete("/deleteTutee", function (req, res) {
     var myquery = deleteObj
     dbo.collection("tutees").deleteOne(myquery, function(err, obj) {
       if (err) throw err;
-      console.log("1 document deleted");
+      console.log("1 document deleteddddd");
       res.send("Deleted")
       db.close();
     });
@@ -105,15 +105,18 @@ app.delete("/deleteTutee", function (req, res) {
 app.post("/updateTutee", function (req, res) {
   // Need to save current profile and update
   // body: {Name:xxx , Email:xxx}
-  console.log(req.body,"body")
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     let dbo = db.db("open_source_learning");
-    let myquery = { Name: req.body.Name };
+    let myquery = req.body.queryObj;
+    console.log(myquery,"MYquerye")
     let newvalues = { $set: {Email: req.body.Email, Course: req.body.Course, Grade: req.body.Grade, Description: req.body.Description} };
+    console.log(myquery)
     dbo.collection("tutees").updateOne(myquery, newvalues, function(err, res) {
       if (err) throw err;
-      console.log("1 document updated");
+      console.log("UPDATEWD");
+      
       db.close();
     });
   });
