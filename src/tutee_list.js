@@ -10,6 +10,6 @@ const res = fetch('/getTutee',{
   for(let i = 0; i < arr.length; i++) {
     let person = arr[i]
     let newRow = table.insertRow(-1)
-    newRow.innerHTML = `<td>${person.Name}</td><td>${person.Email}</td><td>${person.Grade}</td><td>${person.Description}</td>`;
+    newRow.innerHTML = `<td>${person.Name}</td><td>${person.Email}</td><td>${person.Course}</td><td>${person.Grade}</td><td>${person.Description}</td>`;
   }
 })

@@ -27,7 +27,8 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
         if(!found) {
             swal("ERROR","Username/password does not exist. Please try a different password or create an account","error")
         }
-    })})
+    }
+    )})
 
 document.getElementById("register-button").addEventListener("click", ()=>{
     const username = document.getElementById("user_username");
