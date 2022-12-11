@@ -1,0 +1,112 @@
+html,body {
+    background-image:url("background.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+.navbar-brand {
+    font-size:50px;
+    color:red !important;
+    font-weight:bold;
+}
+.nav.navbar-nav li a {
+    font-size:20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:white !important;
+    background:transparent;
+    box-shadow:none;
+    border:0;
+}
+.navbar.navbar-inverse {
+    background:transparent;
+    box-shadow:none;
+}
+h1 {
+    color: red!important;;
+    font-weight:bold;
+    font-size:80px;
+}
+h2 {
+    color:white;
+    font-size:50px;
+}
+.welcome {
+    background-color: transparent;
+    margin:auto;
+    width:60%;
+    top:40%;
+    left:20%;
+    position:absolute;
+    text-align:center;
+}
+
+.tutoring {
+    float:right;
+    padding-right:50px;
+}
+.containerbgWhite{
+    background-color:white;
+    margin-top:100px;
+}
+
+#deleteProfileBtn{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
+#logoutButton{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
+#yellowSideBar{
+    width:200px;
+    height: 800px;
+    background:yellow;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    zoom: 2;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: red;
+    background-color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 7px;
+}
+  
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+    right: 9px;
+}
+#Description{
+    color: white;
+}
