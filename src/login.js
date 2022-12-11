@@ -9,7 +9,7 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
 
     console.log("this is data: ", user_data);
 
-    const response = fetch('/login',{
+    fetch('/login',{
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
