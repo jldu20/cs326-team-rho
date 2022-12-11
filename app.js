@@ -22,7 +22,7 @@ let url;
 // url = secrets.URL;
 // } else {
 // 	url = process.env.URL;
-// }
+// }npm i --S redis connect-redis
 url = process.env.MONGDO_URL;
 console.log(url)
 url = "mongodb+srv://rhoMember:2bSh5JdVsCuW3TSK@rhobase.faewymn.mongodb.net/test"
@@ -168,10 +168,9 @@ app.post('/login', function (req, res){
 );
 
 //LOGIN STUFF
-let expressSession = require('express-session');  // for managing session state
+let session = require('express-session');  // for managing session state
 const passport = require('passport');               // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
-
 app.use(express.static("src"))
 
 /// NEW
@@ -180,10 +179,14 @@ const mc = new minicrypt.MiniCrypt();
 
 // Session configuration
 
-const session = {
+const sessionObj = {
     secret : process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
     resave : false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { secure: false },
+    maxAge: 24 * 60 * 60 * 1000000 // 24 hours
+    // loggedIn: false,
+    // user: ""
 };
 
 // Passport configuration
@@ -209,7 +212,7 @@ const strategy = new LocalStrategy(
 
 // App configuration
 
-app.use(expressSession({secret: "its a secret!!!!!!"}));
+app.use(session(sessionObj));
 passport.use(strategy);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -302,8 +305,16 @@ app.get('/testing',
 	});
 app.post('/currUser',
 	(req, res) => {
-	    session.user = req.body.username;
-      isLoggedIn = true;
+	    req.session["user"] = req.body.username;
+      req.session["loggedIn"] = true;
+      console.log(req.session)
+      // res.send(session.user);
+      req.session.save(() =>
+      res.send("stuff"));
+	});
+  app.post('/accLogout',
+	(req, res) => {
+      isLoggedIn = false;
       // res.send(session.user);
       res.status(200)
 	});
@@ -312,16 +323,37 @@ app.post('/cUser',
 	    // res.send(session.user)
       // res.send(JSON.stringify(session));
     // res.status(200).send(session.user);
-    res.send(session.user)
+    req.session.save(() => {
+      res.send(req.session.user)
+    })
+    // res.send(req.session.user)
 	});
   app.post('/isIn',
-	(req, res) => {             
-    if(!isLoggedIn) {
-      res.send("false")
-    }
-    else {
-      res.send("true")
-    }
+	(req, res) => {          
+    let sess = req.session;
+    // if(sess.loggedIn == false) {
+    console.log(sess)
+    console.log(req.sessionStore)
+    req.session.save(() => {
+      if(!("loggedIn" in req.session)){
+        res.send("false")
+      }
+      else {
+        res.send("true")
+      }
+    })
+    // if(!("loggedIn" in sess)){
+    //   res.send("false")
+    // }
+    // else {
+    //   res.send("true")
+    // }
+    // if(!req.expressSession.loggedIn) {
+    //   res.send("false")
+    // }
+    // else {
+    //   res.send("true")
+    // }
 	});
 // Handle post data from the login.html form.
 app.post('/login',

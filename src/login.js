@@ -20,6 +20,7 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
             if(arr[i].username === user_data.username) {
                 if(arr[i].password === user_data.password) {
                     found = true;
+                    window.setTimeout(()=> {
                     fetch('/currUser', {
                         method: 'POST', // or 'PUT'
                         headers: {
@@ -31,6 +32,8 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
                         method: 'POST', // or 'PUT'
                      }).then(res=>res.text()).then(data=>swal("SUCCESS", "Logged in!", "Success"))
                      location.href = "./index.html"
+                    },1000
+                    )
                 }
             }
         }
