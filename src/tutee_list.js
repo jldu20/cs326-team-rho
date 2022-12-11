@@ -1,10 +1,10 @@
-// fetch('/isIn', {
-//   method: 'GET', // or 'PUT'
-//   headers: {
-//       'Accept': 'application/json',
-//       'Content-Type': 'application/json' 
-//   },
-// }).then(res=>res == false? location.href = "./login.html": location.href = window.location.href)
+fetch('/isIn', {
+  method: 'POST', // or 'PUT'
+}).then(res=>res.text()).then(data => {
+  if(data == "false") {
+    location.href = "./login.html"
+  }
+})
 let table = document.getElementById("myTable");
 const res = fetch('/getTutee',{
   method:"GET",

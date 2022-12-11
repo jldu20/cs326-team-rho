@@ -314,10 +314,13 @@ app.post('/cUser',
     // res.status(200).send(session.user);
     res.send(session.user)
 	});
-  app.get('/isIn', // If we are logged in (notice the comma!)...
-	(req, res) => {             // Go to the user's page.
+  app.post('/isIn',
+	(req, res) => {             
     if(!isLoggedIn) {
-      res.redirect("/login.html")
+      res.send("false")
+    }
+    else {
+      res.send("true")
     }
 	});
 // Handle post data from the login.html form.

@@ -19,7 +19,6 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
         for(let i = 0; i < arr.length; i++) {
             if(arr[i].username === user_data.username) {
                 if(arr[i].password === user_data.password) {
-                    location.href = "./index.html"
                     found = true;
                     fetch('/currUser', {
                         method: 'POST', // or 'PUT'
@@ -30,12 +29,16 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
                         })
                      fetch('/cUser', {
                         method: 'POST', // or 'PUT'
-                     }).then(res=>res.text()).then(data=>alert(data))
+                     }).then(res=>res.text()).then(data=>swal("SUCCESS", "Logged in!", "Success"))
+                     location.href = "./index.html"
                 }
             }
         }
         if(!found) {
             swal("ERROR","Username/password does not exist. Please try a different password or create an account","error")
+        }
+        else {
+            swal("SUCCESS", "Logged in!", "Success")
         }
     }
     )})

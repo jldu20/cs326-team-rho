@@ -1,4 +1,10 @@
-
+fetch('/isIn', {
+  method: 'POST', // or 'PUT'
+}).then(res=>res.text()).then(data => {
+  if(data == "false") {
+    location.href = "./login.html"
+  }
+})
 let vidContainer = document.getElementById("wrapper");
 
 console.log(vidContainer)
