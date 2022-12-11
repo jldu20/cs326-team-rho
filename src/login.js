@@ -1,4 +1,4 @@
-document.getElementById("log-in-button").addEventListener("click", async ()=>{
+document.getElementById("log-in-button").addEventListener("click", ()=>{
     const username = document.getElementById("user_username");
     const password = document.getElementById("user_password");
 
@@ -9,13 +9,19 @@ document.getElementById("log-in-button").addEventListener("click", async ()=>{
 
     console.log("this is data: ", user_data);
 
-    const response = await fetch('/login',{
-        method: 'POST',
+    fetch('/login', {
+        method: 'POST', // or 'PUT'
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(user_data),
-    });
-    const data = await response.json()
-    console.log("Success", data)
+        })
+        .then((response) => console.log(response))
+        .then((data) => {
+            console.log('Success:', data);
+            console.log(data)
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
