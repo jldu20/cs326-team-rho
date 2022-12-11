@@ -101,12 +101,6 @@ html,body {
     position: relative;
     
 }
-#course_title{
-    color: black;
-}
-#user_email{
-    color: black;
-}
 .dropdown {
     position: relative;
     display: inline-block;
