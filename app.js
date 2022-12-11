@@ -282,6 +282,7 @@ function addUser(name, pwd) {
     console.log(users);
     return true;
 }
+let isLoggedIn = false;
 
 // Routes
 
@@ -302,6 +303,7 @@ app.get('/testing',
 app.post('/currUser',
 	(req, res) => {
 	    session.user = req.body.username;
+      isLoggedIn = true;
       // res.send(session.user);
       res.status(200)
 	});
@@ -311,6 +313,12 @@ app.post('/cUser',
       // res.send(JSON.stringify(session));
     // res.status(200).send(session.user);
     res.send(session.user)
+	});
+  app.get('/isIn', // If we are logged in (notice the comma!)...
+	(req, res) => {             // Go to the user's page.
+    if(!isLoggedIn) {
+      res.redirect("/login.html")
+    }
 	});
 // Handle post data from the login.html form.
 app.post('/login',
