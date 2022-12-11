@@ -1,5 +1,6 @@
 
 let table = document.getElementById("myTable");
+console.log(table)
 const res = fetch('/getTutee',{
   method:"GET",
   headers: { 
