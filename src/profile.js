@@ -1,3 +1,11 @@
+fetch('/isIn', {
+    method: 'POST', // or 'PUT'
+  }).then(res=>res.text()).then(data => {
+    if(data == "false") {
+      location.href = "./login.html"
+    }
+  })
+
 let table = document.getElementById("profileTable");
 let acc_name = ""
 let displayTableArr = []
