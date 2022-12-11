@@ -86,6 +86,7 @@ app.delete("/deleteTutee", function (req, res) {
 });
 
 
+
 // update
 app.post("/updateTutee", function (req, res) {
   // Need to save current profile and update
@@ -103,6 +104,37 @@ app.post("/updateTutee", function (req, res) {
     });
   });
 });
+
+app.post('/addVideo', function (req, res){
+  const submitObj = req.body;
+
+  console.log("this is body", req.body)
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    let dbo = db.db("open_source_learning");
+    dbo.collection("videos").insertOne(submitObj, function(err, res) {
+        if (err) throw err;
+        console.log("1 document inserted");
+        db.close();
+    });
+  res.sendStatus(201)
+  });
+  }
+);
+app.get("/getVideo", function (req, res) {
+  MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    let dbo = db.db("open_source_learning");
+
+    dbo.collection("videos").find().toArray(function(err, result) {
+      if (err) throw err;
+      console.log(result,"videos");
+      res.send(result)
+      db.close();
+    });
+  });
+});
+
 app.post('/login', function (req, res){
   const login_info = req.body;
   console.log("this is body", req.body)
