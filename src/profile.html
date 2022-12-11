@@ -36,8 +36,9 @@
                         <div class="dropdown-content">
                           <a href="#">My Account</a>
                           <a href="profile.html">Update Profile</a>
-                          <button type = "button" id="deleteProfileBtn">Delete Profile</a>
+                          <button type = "button" class="deletebtn" id="deleteProfileBtn">&emsp;&emsp;Delete <br>&emsp;&emsp;Profile</button>
                           <a href="reqTutor.html">Create Profile</a>
+                          <button type = "button" id="logoutButton">&emsp;&emsp;Log Out</a>
                         </div>
                       </div>
                     </ul>
@@ -46,40 +47,44 @@
         </div>
        <div>
             <div class="title">
+                &ensp;
                 <center><h3>My Profile </h3></center>
             </div>
             <br><br><br><br>
             <center><div class="box"></div></center>
         </div>
+
         <div class="student_card">
-        <div class="card" style="width: 18rem;">
-            <div class="card_info">
-                <div id="student_id">
-                    <img src="uknownuser.webp" width="125px" id="card-image"><br>
-                    <p id="card-name">Jerry Du</p>
+            <div id="student_id">
+                <img src="uknownuser.webp" width="125px" id="card-image"><br>
+                <p id="card-name">Jerry Du</p>
+            </div>
+            <div id="help_info">
+                <div id="card-courses">
+                    <label>Requested Course: </label>
+                    <input name="Student" id="course_title" />
                 </div>
-                <div id="help_info">
-                    <p class="card-center" style="width: 150rem;" id="card-courses">&emsp;&emsp;&emsp;&emsp;&emsp;Requested Course: </p><br>
-                    <input type="text" id="course_title">
-                    <p class="card-center" id="card-year">&emsp;&emsp;&emsp;&emsp;&emsp;Year: </p>
+                <br>
+                <div id="card-year">
+                    <label>Year:&emsp;</label>
                     <select id="year">
                         <option value="horizontal">Freshman</option>
                         <option value="vertical">Sophmore</option>
                         <option value="vertical">Junior</option>
                         <option value="vertical">Senior</option>
-                    </select><br>
-                    <p class="card-center" id="card-description">&emsp;&emsp;&emsp;&emsp;&emsp;Description of Help Needed:</p>
-                    <textarea id="description_box" rows="4" cols="50"></textarea>
-                    <br><br><br><br><br><br><br>
-                    <p class="card-center" id="card-email">&emsp;&emsp;&emsp;&emsp;&emsp;Email: </p>
-                    <input type="text" id="email"><br>
+                    </select>
+                </div><br>
+                <div class="card-description">
+                    <label>Description of Help Needed: </label>
                 </div>
+                <textarea id="description_box" rows="4" cols="50"></textarea><br><br><br><br><br>
+                <div>
+                    <label>Email: </label>
+                    <input name="email">
+                </div><br><br>
+                <button type="button" id = "updateProfileBTN" class="btn btn-dark">Update!</button>
+
             </div>
         </div>
-        <div class="text-left" id="help_me">
-            <button type="button" id = "updateProfileBTN"class="btn btn-dark">Update!</button>
-        </div>
-        </div>
-        
     </body>
 </html>
