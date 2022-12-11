@@ -1,5 +1,10 @@
 let table = document.getElementById("profileTable");
+let acc_name = ""
 let displayTableArr = []
+fetch('/cUser', {
+    method: 'POST', // or 'PUT'
+ }).then(res=>res.text()).then(data=>acc_name = data)
+
 
 const res = fetch('/getTutee',{
     method:"GET",
@@ -11,7 +16,7 @@ const res = fetch('/getTutee',{
     let id = 0
     for(let i = 0; i < arr.length; i++) {
       let person = arr[i]
-      if (arr[i].Name != "Jerry Du"){
+      if (arr[i].Name != acc_name){
         continue
       }
       delete person._id
@@ -29,7 +34,7 @@ document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
   
     const data = {
         "queryObj" : displayTableArr[idVal],
-        "Name": "Jerry Du",
+        "Name": acc_name,
         "Email": document.getElementById("nEmail").value,
         "Course": document.getElementById("nCourse").value,
         "Grade": document.getElementById("nGrade").value,
