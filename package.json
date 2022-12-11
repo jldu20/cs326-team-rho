@@ -27,12 +27,15 @@
   "homepage": "https://github.com/jldu20/cs326-final-rho#readme",
   "dependencies": {
     "body-parser": "*",
+    "connect-redis": "^6.1.3",
+    "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "mongodb": "^4.12.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
+    "redis": "^4.5.1",
     "sweetalert": "^2.1.2"
   }
 }

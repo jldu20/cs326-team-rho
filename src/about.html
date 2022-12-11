@@ -8,6 +8,13 @@
    <link rel="stylesheet" href="about.css" />
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
   integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+  <script>fetch('/isIn', {
+    method: 'POST', // or 'PUT'
+  }).then(res=>res.text()).then(data => {
+    if(data == "false") {
+      location.href = "./login.html"
+    }
+  })</script>
 </head>
 
 <body>

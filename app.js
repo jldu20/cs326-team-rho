@@ -22,7 +22,7 @@ let url;
 // url = secrets.URL;
 // } else {
 // 	url = process.env.URL;
-// }
+// }npm i --S redis connect-redis
 url = process.env.MONGDO_URL;
 console.log(url)
 url = "mongodb+srv://rhoMember:2bSh5JdVsCuW3TSK@rhobase.faewymn.mongodb.net/test"
@@ -84,7 +84,7 @@ app.post("/addUser", function (req, res) {
 });
 app.delete("/deleteTutee", function (req, res) {
   // body: {Name:xxx , Email:xxx}
-  console.log(req.body,"body")
+  console.log(req.body,"app delete")
   const deleteObj = req.body;
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
@@ -92,7 +92,7 @@ app.delete("/deleteTutee", function (req, res) {
     var myquery = deleteObj
     dbo.collection("tutees").deleteOne(myquery, function(err, obj) {
       if (err) throw err;
-      console.log("1 document deleted");
+      console.log("1 document deleteddddd");
       res.send("Deleted")
       db.close();
     });
@@ -105,15 +105,18 @@ app.delete("/deleteTutee", function (req, res) {
 app.post("/updateTutee", function (req, res) {
   // Need to save current profile and update
   // body: {Name:xxx , Email:xxx}
-  console.log(req.body,"body")
+
   MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     let dbo = db.db("open_source_learning");
-    let myquery = { Name: req.body.Name };
+    let myquery = req.body.queryObj;
+    console.log(myquery,"MYquerye")
     let newvalues = { $set: {Email: req.body.Email, Course: req.body.Course, Grade: req.body.Grade, Description: req.body.Description} };
+    console.log(myquery)
     dbo.collection("tutees").updateOne(myquery, newvalues, function(err, res) {
       if (err) throw err;
-      console.log("1 document updated");
+      console.log("UPDATEWD");
+      
       db.close();
     });
   });
@@ -168,10 +171,9 @@ app.post('/login', function (req, res){
 );
 
 //LOGIN STUFF
-const expressSession = require('express-session');  // for managing session state
+let session = require('express-session');  // for managing session state
 const passport = require('passport');               // handles authentication
 const LocalStrategy = require('passport-local').Strategy; // username/password strategy
-
 app.use(express.static("src"))
 
 /// NEW
@@ -180,10 +182,14 @@ const mc = new minicrypt.MiniCrypt();
 
 // Session configuration
 
-const session = {
+const sessionObj = {
     secret : process.env.SECRET || 'SECRET', // set this encryption key in Heroku config (never in GitHub)!
     resave : false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    cookie: { secure: false },
+    maxAge: 24 * 60 * 60 * 1000000 // 24 hours
+    // loggedIn: false,
+    // user: ""
 };
 
 // Passport configuration
@@ -209,7 +215,7 @@ const strategy = new LocalStrategy(
 
 // App configuration
 
-app.use(expressSession(session));
+app.use(session(sessionObj));
 passport.use(strategy);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -282,6 +288,7 @@ function addUser(name, pwd) {
     console.log(users);
     return true;
 }
+let isLoggedIn = false;
 
 // Routes
 
@@ -294,13 +301,63 @@ function checkLoggedIn(req, res, next) {
 	res.redirect('/login');
     }
 }
-
-app.get('/',
-	checkLoggedIn,
+app.get('/testing', 
 	(req, res) => {
-	    res.send("hello world");
+	    // res.send(session.user)
+      res.send("Hello worldd")
 	});
-
+app.post('/currUser',
+	(req, res) => {
+	    req.session["user"] = req.body.username;
+      req.session["loggedIn"] = true;
+      console.log(req.session)
+      // res.send(session.user);
+      req.session.save(() =>
+      res.send("stuff"));
+	});
+  app.post('/accLogout',
+	(req, res) => {
+      isLoggedIn = false;
+      // res.send(session.user);
+      res.status(200)
+	});
+app.post('/cUser', 
+	function (req, res)  {
+	    // res.send(session.user)
+      // res.send(JSON.stringify(session));
+    // res.status(200).send(session.user);
+    req.session.save(() => {
+      res.send(req.session.user)
+    })
+    // res.send(req.session.user)
+	});
+  app.post('/isIn',
+	(req, res) => {          
+    let sess = req.session;
+    // if(sess.loggedIn == false) {
+    console.log(sess)
+    console.log(req.sessionStore)
+    req.session.save(() => {
+      if(!("loggedIn" in req.session)){
+        res.send("false")
+      }
+      else {
+        res.send("true")
+      }
+    })
+    // if(!("loggedIn" in sess)){
+    //   res.send("false")
+    // }
+    // else {
+    //   res.send("true")
+    // }
+    // if(!req.expressSession.loggedIn) {
+    //   res.send("false")
+    // }
+    // else {
+    //   res.send("true")
+    // }
+	});
 // Handle post data from the login.html form.
 app.post('/login',
 	passport.authenticate('local' , {     // use username/password authentication

@@ -1,5 +1,11 @@
 let table = document.getElementById("profileTable");
-console.log(table)
+let acc_name = ""
+let displayTableArr = []
+fetch('/cUser', {
+    method: 'POST', // or 'PUT'
+ }).then(res=>res.text()).then(data=>acc_name = data)
+
+
 const res = fetch('/getTutee',{
     method:"GET",
     headers: { 
@@ -10,41 +16,43 @@ const res = fetch('/getTutee',{
     let id = 0
     for(let i = 0; i < arr.length; i++) {
       let person = arr[i]
-      if (arr[i].Name != "Jerry Du"){
+      if (arr[i].Name != acc_name){
         continue
       }
-      console.log(arr[i])
+      delete person._id
+      displayTableArr.push(person)
       let newRow = table.insertRow(-1)
       newRow.innerHTML = `<td>${id}</td><td>${person.Name}</td><td>${person.Email}</td><td>${person.Course}</td><td>${person.Grade}</td><td>${person.Description}</td>`;
       id+=1
     }
   })
 
+document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
 
-
+    const idVal = document.getElementById("idfromTable").value
 
   
-document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
-    const yearSelect = document.getElementById("year");
     const data = {
-        "Name": document.getElementById("card-name").innerHTML,
-        "Email": document.getElementById("email").value,
-        "Course": document.getElementById("course_title").value,
-        "Grade": yearSelect.options[yearSelect.selectedIndex].text,
-        "Description" : document.getElementById("description_box").value,
+        "queryObj" : displayTableArr[idVal],
+        "Name": acc_name,
+        "Email": document.getElementById("nEmail").value,
+        "Course": document.getElementById("nCourse").value,
+        "Grade": document.getElementById("nGrade").value,
+        "Description" : document.getElementById("nDesc").value,
     };
-    console.log(data)
+    console.log(data,"DTA")
     fetch('/updateTutee', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(data),
+        // body: data
     })
         .then((response) => response)
-        .then((data) => {
-            console.log('Success:', data);
-            console.log(data)
+        .then((mydata) => {
+            console.log('Success:', mydata);
+            console.log(mydata)
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -52,12 +60,17 @@ document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
 
 });
 
-document.getElementById("deleteProfileBtn").addEventListener("click", ()=> {
-    const data = {
-        "Name": document.getElementById("card-name").innerHTML,
-    };
+document.getElementById("deleteIDButton").addEventListener("click", ()=> {
+
+    const idVal = document.getElementById("idForDel").value
+    console.log(idVal,"idval")
+
     
-    console.log(data)
+    console.log(displayTableArr[idVal],"DisplayTable",idVal)
+    
+    const data = displayTableArr[idVal]
+    
+    console.log(data,"this is data for delete")
     fetch('/deleteTutee', {
         method: 'DELETE', // or 'PUT'
         headers: {

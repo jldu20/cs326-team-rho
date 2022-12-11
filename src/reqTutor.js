@@ -1,4 +1,10 @@
-
+fetch('/isIn', {
+    method: 'POST', // or 'PUT'
+  }).then(res=>res.text()).then(data => {
+    if(data == "false") {
+      location.href = "./login.html"
+    }
+  })
 document.getElementById("tutee-submit").addEventListener("click", ()=> {
     const yearSelect = document.getElementById("year");
     const name = document.getElementById("tutee-name");
