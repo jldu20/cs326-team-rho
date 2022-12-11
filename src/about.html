@@ -69,3 +69,12 @@
 
       </div>
 </body>
+<script>
+  document.getElementById("logoutButton").addEventListener("click", ()=> {
+    console.log("btnClick")
+    fetch('/accLogout', {
+      method: 'POST', // or 'PUT'
+  }).then(res=>res.text()).then(data=>console.log("logoutt"))
+  location.href = "./login.html"
+  });
+  </script>

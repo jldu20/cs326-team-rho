@@ -1,6 +1,7 @@
 fetch('/isIn', {
     method: 'POST', // or 'PUT'
   }).then(res=>res.text()).then(data => {
+    console.log(data)
     if(data == "false") {
       location.href = "./login.html"
     }
@@ -34,6 +35,8 @@ const res = fetch('/getTutee',{
       id+=1
     }
   })
+
+
 
 document.getElementById("updateProfileBTN").addEventListener("click", ()=> {
 
@@ -95,4 +98,11 @@ document.getElementById("deleteIDButton").addEventListener("click", ()=> {
             console.error('Error:', error);
         });
 
+});
+document.getElementById("logoutButton").addEventListener("click", ()=> {
+  console.log("btnClick")
+  fetch('/accLogout', {
+    method: 'POST', // or 'PUT'
+ }).then(res=>res.text()).then(data=>console.log("logoutt"))
+ location.href = "./login.html"
 });
