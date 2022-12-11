@@ -101,10 +101,9 @@ app.post('/login', function (req, res){
       dbo.collection("login_info").find(login_info).toArray(function(err, result) {
         if (err) throw err;
         console.log(result,"aaa");
+        res.send(result)
         db.close();
       });
-
-
   })
   }
 );

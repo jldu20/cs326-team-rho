@@ -9,19 +9,19 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
 
     console.log("this is data: ", user_data);
 
-    fetch('/login',{
-        method: 'POST',
+    fetch('/login', {
+        method: 'POST', // or 'PUT'
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(user_data),
-    })
-    .then((response) => console.log(response))
-    .then((data) => {
-        console.log('Success:', data);
-        console.log(data)
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
+        })
+        .then((response) => console.log(response))
+        .then((data) => {
+            console.log('Success:', data);
+            console.log(data)
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 });
