@@ -1,4 +1,4 @@
-// import swal from 'sweetalert';
+
 document.getElementById("log-in-button").addEventListener("click", ()=>{
     const username = document.getElementById("user_username");
     const password = document.getElementById("user_password");
@@ -25,7 +25,7 @@ document.getElementById("log-in-button").addEventListener("click", ()=>{
             }
         }
         if(!found) {
-            swal("Username/password does not exist. Please try a different password or create an account")
+            swal("ERROR","Username/password does not exist. Please try a different password or create an account","error")
         }
     })})
 
@@ -47,7 +47,7 @@ document.getElementById("register-button").addEventListener("click", ()=>{
     }).then(response=>response.json()).then(arr=> {
         for(let i = 0; i < arr.length; i++) {
             if(arr[i].username === user_data.username) {
-                swal("Username already exists! Please login with that username or create a new one")
+                swal("ERROR:","Username already exists! Please login with that username or create a new one","error")
                 exists = true;
             }
         }
@@ -59,7 +59,7 @@ document.getElementById("register-button").addEventListener("click", ()=>{
                 },
                 body: JSON.stringify(user_data),
                 })
-            swal("account created")
+            swal("Success!","account created, please login with it","success").then(value=> location.href = "./login.html")
         }
         
     })})
