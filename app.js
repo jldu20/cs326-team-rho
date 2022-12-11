@@ -95,18 +95,17 @@ app.post("/updateTutee", function (req, res) {
 app.post('/login', function (req, res){
   const login_info = req.body;
   console.log("this is body", req.body)
-    MongoClient.connect(url, function(err, db){
+  MongoClient.connect(url, function(err, db){
+      if (err) throw err;
+      let dbo = db.db("open_source_learning");
+      dbo.collection("login_info").find(login_info).toArray(function(err, result) {
         if (err) throw err;
-        let dbo = db.db("open_source_learning");
-        if (dbo.collection("login_info").count_documents(login_info)){
-          console.log("exist")
-        }
-        else{
-          console.log("DNE")
-        }
+        console.log(result,"aaa");
+        db.close();
+      });
 
 
-    })
+  })
   }
 );
 
