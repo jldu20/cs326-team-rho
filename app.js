@@ -317,7 +317,7 @@ app.post('/currUser',
 	});
   app.post('/accLogout',
 	(req, res) => {
-      isLoggedIn = false;
+      req.session.destroy();
       // res.send(session.user);
       res.status(200)
 	});
