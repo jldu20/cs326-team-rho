@@ -60,6 +60,24 @@ h2 {
 #tutee-submit {
     margin-left:25%;
 }
+#deleteProfileBtn{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
+#logoutButton{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
 label {
     color:white;
 }

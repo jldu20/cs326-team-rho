@@ -131,6 +131,7 @@ form.example::after {
     margin-bottom: 12px; /* Add some space below the input */
   }
   
+
   #myTable {
     border-collapse: collapse; /* Collapse borders */
     width: 100%; /* Full-width */
@@ -148,4 +149,21 @@ form.example::after {
     /* Add a bottom border to all table rows */
     border-bottom: 1px solid #ddd;
   }
-  
+  #deleteProfileBtn{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
+#logoutButton{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    font-size: 50%;
+    color: red;
+    cursor: pointer;
+}
