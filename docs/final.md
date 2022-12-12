@@ -13,7 +13,59 @@ Team Members:
     Hadi Abdelghany: abdeha2023
 
 User Interface:
-    The user is greeted with the login page(insert image). Oncne the user logins in or creates an account the Open Source Learning home page will appear (insert image). The nav bar at the top allows the user to navigate the website with ease. The classes page (insert image) gives the user a list of the possible CS classes they can take as well as request a tutor for. The next tab, resources (inser image) is a place where the user can watch videos posted by other students as well as post a video themselves that they may have found helpful. The next tab Request Tutor is the heart of the application. This allows the user to create a request for a tutor that will in turn appear on the tutee list, which happens to be the next tab (insert image). Once the user hits the submit button in the request tutor page, their request will appear here where a tutor can see it and decide to help the user out! Finally the about us page (insert image) is just a page that lets the user know who createad the website they are using! Aside from the nav bar, there is a drop-down menu (insert image) that has multiple other pages. The update profile page (insert image) allows the user to make changes to any one of their tutoring requests. The create profile simply brings you to the request tutor page where you can create your profile. And last but not least the Log out button which simply logs you out of the website. 
+    The user is greeted with the login page. Once the user logins in or creates an account the Open Source Learning home page will appear. The nav bar at the top allows the user to navigate the website with ease. The classes page gives the user a list of the possible CS classes they can take as well as request a tutor for. The next tab, resources is a place where the user can watch videos posted by other students as well as post a video themselves that they may have found helpful. The next tab Request Tutor is the heart of the application. This allows the user to create a request for a tutor that will in turn appear on the tutee list, which happens to be the next tab. Once the user hits the submit button in the request tutor page, their request will appear here where a tutor can see it and decide to help the user out! Finally the about us page is just a page that lets the user know who createad the website they are using! Aside from the nav bar, there is a drop-down menu that has multiple other pages. The update profile page allows the user to make changes to any one of their tutoring requests. The create profile simply brings you to the request tutor page where you can create your profile. And last but not least the Log out button which simply logs you out of the website.
+
+
+LOGIN PAGE: 
+<img src="login_image.png" width="350" title="hover text">
+
+CLASSES PAGE:
+<img src="classes_page.png" width="350" title="hover text">
+
+RESOURCES PAGE:
+<img src="resources_page.png" width="350" title="hover text">
+
+REQUEST TUTOR PAGE:
+<img src="Request_tutor.png" width="350" title="hover text">
+
+ABOUT US PAGE:
+<img src="about_us_page.png" width="350" title="hover text">
+
+DROPDOWN MENU:
+<img src="drop_down_menu.png" width="200" title="hover text">
+
+UPDATE PROFILE PAGE:
+<img src="update_page.png" width="350" title="hover text">
+
+
+Database:
+    Our application uses the mongo database. Using Mongo db we created 3 collections. login_info, tutees, and videos. The first collection, login_info, is the place where we store all the exisiting and new username and passwords of the users. The second collection, tutees, is the place where we store all of the tutoring requests that the user submits. The final collection, videos, is the place where we store all of the videos that the users submit to the resouces page. 
+
+
+URL Routes/Mappings
+    Get: /getTutee
+        Retrieves the entire tutee database to display on front end
+    Delete: /deleteTutee
+        Input: {Name: “”, Email: “”, Grade: “”, Description: “”}
+        Finds and remove tutee from database
+    Post: /updateTutee
+        Input: {queryObj: {....}, Name: “”, Email: “”, Grade: “”, Description: “”}
+        Query database with queryobj and updates it with the remaining input    
+    Post: /addVideo
+        Input: Embedded link
+        Insert embedded link into video database
+    Get: /getTutee
+        Retrieves the entire video database to display on front end
+    Get: /addUser
+        Register a user into the loginfo database
+
+
+Get: /accAuth -> For checking login against database
+Post: /currUser => Once logged in, sets the session user to the username and session logged in to true
+Post: /accLogout => deletes the session
+Post: /cUser =>sends the current user name
+Post: /isIn => Checks if user is logged in
+
 
 Division of Labor:
     Jerry Du: login backend, authentication and authorization, worked on tutee list front end and back end, request tutor front end and back end
@@ -21,6 +73,6 @@ Division of Labor:
     Hadi Abdelghany: classes frontend, login page frontend, login backend, update profile front end, about us page
 
 Conclusion:
-    Overall working on the project was a great experience and we have all learned a lot. Some things include how to connect frontend to backend as well as how a database fits into both front and backend. In addition, we learned a lot of new html and css tricks that allowed the frontend of our website to come alive. We ran into issues mainly in the backend with database interaction and moving database information from backend to frontend and vice versa moving frontend information to the database. Something that would have helped was having more experience with backend and database work cause thats where almost all of our troubles lied 
+    Overall working on the project was a great experience and we have all learned a lot. Some things include how to connect frontend to backend as well as how a database fits into both front and backend. In addition, we learned a lot of new html and css tricks that allowed the frontend of our website to come alive. We ran into issues mainly in the backend with database interaction and moving database information from backend to frontend and vice versa moving frontend information to the database. Something that would have helped was having more experience with backend and database work cause thats where almost all of our troubles lied and where most of our debugging time was spent. Overall it was a great experience and have learned a lot throughout the process 
 
-URL: https://cs326-rho.herokuapp.com/ (home, request tutor, tutee list)
+URL: https://cs326-rho.herokuapp.com/

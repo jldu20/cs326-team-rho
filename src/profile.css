@@ -44,8 +44,8 @@ div.profileUD label:after { content: ":"; }
     color: red
 }
 .box{
-    width: 420px;
-    height: 350px;
+    width: 440px;
+    height: 400px;
     padding: 10px;
     border: 3px solid red;
     margin: 0;
@@ -93,8 +93,6 @@ label {
     position: absolute;
     color: black;
     background-color: white;
-    /* left: 300px;
-    top: 545px; */
 }
 
 #year{
