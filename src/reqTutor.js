@@ -37,6 +37,6 @@ document.getElementById("tutee-submit").addEventListener("click", ()=> {
     .catch((error) => {
         console.error('Error:', error);
     });
-    alert("Submitted!")
+    swal("Success!", "Submitted!", "success");
 })
 
