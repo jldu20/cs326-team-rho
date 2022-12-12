@@ -44,26 +44,26 @@ Database:
 
 API/URL Routes/Mappings
     Get: /getTutee
-        Retrieves the entire tutee database to display on front end
+    Retrieves the entire tutee database to display on front end
     Delete: /deleteTutee
-        Input: {Name: “”, Email: “”, Grade: “”, Description: “”}
-        Finds and remove tutee from database
+    Input: {Name: “”, Email: “”, Grade: “”, Description: “”}
+    Finds and remove tutee from database
     Post: /updateTutee
-        Input: {queryObj: {....}, Name: “”, Email: “”, Grade: “”, Description: “”}
-        Query database with queryobj and updates it with the remaining input    
+    Input: {queryObj: {....}, Name: “”, Email: “”, Grade: “”, Description: “”}
+    Query database with queryobj and updates it with the remaining input    
     Post: /addVideo
-        Input: Embedded link
-        Insert embedded link into video database
+    Input: Embedded link
+    Insert embedded link into video database
     Get: /getTutee
-        Retrieves the entire video database to display on front end
+    Retrieves the entire video database to display on front end
     Get: /addUser
-        Register a user into the loginfo database
+    Register a user into the loginfo database
 
-     Get: /accAuth -> For checking login against database
-     Post: /currUser => Once logged in, sets the session user to the username and session logged in to true
-     Post: /accLogout => deletes the session
-     Post: /cUser =>sends the current user name
-     Post: /isIn => Checks if user is logged in
+    Get: /accAuth -> For checking login against database
+    Post: /currUser => Once logged in, sets the session user to the username and session logged in to true
+    Post: /accLogout => deletes the session
+    Post: /cUser =>sends the current user name
+    Post: /isIn => Checks if user is logged in
  
 Authentication/Authorization:
      When you first try to access the website, your session key will not have a loggedIn attribute, so any page you try to navigate to will autmatocailly redirect you to the login page. When you try to login using a username that already exists but with the wrong password, it will deny you. If you try to register with a username that aleeady exists, it will also deny you. When you login with your account, it will check the hash+salt of the password of the corresponding username to see if it fits. If you register with a unique username, it will store the hash+salt in the database for future use along with your username. When you successfully login, you will have a session with the variable "loggedIn" that ensures that you do not get redirected back to the login page when you try to access other pages (you can test this by changing the address bar to another page (e.g /tutee_list.html while logged out)
