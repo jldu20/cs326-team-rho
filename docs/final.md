@@ -42,7 +42,7 @@ Database:
     Our application uses the mongo database. Using Mongo db we created 3 collections. login_info, tutees, and videos. The first collection, login_info, is the place where we store all the exisiting and new username and passwords of the users. The second collection, tutees, is the place where we store all of the tutoring requests that the user submits. The final collection, videos, is the place where we store all of the videos that the users submit to the resouces page. 
 
 
-URL Routes/Mappings
+API/URL Routes/Mappings
     Get: /getTutee
         Retrieves the entire tutee database to display on front end
     Delete: /deleteTutee
@@ -59,14 +59,15 @@ URL Routes/Mappings
     Get: /addUser
         Register a user into the loginfo database
 
-
-Get: /accAuth -> For checking login against database
-Post: /currUser => Once logged in, sets the session user to the username and session logged in to true
-Post: /accLogout => deletes the session
-Post: /cUser =>sends the current user name
-Post: /isIn => Checks if user is logged in
-
-
+     Get: /accAuth -> For checking login against database
+     Post: /currUser => Once logged in, sets the session user to the username and session logged in to true
+     Post: /accLogout => deletes the session
+     Post: /cUser =>sends the current user name
+     Post: /isIn => Checks if user is logged in
+ 
+Authentication/Authorization:
+     When you first try to access the website, your session key will not have a loggedIn attribute, so any page you try to navigate to will autmatocailly redirect you to the login page. When you try to login using a username that already exists but with the wrong password, it will deny you. If you try to register with a username that aleeady exists, it will also deny you. When you login with your account, it will check the hash+salt of the password of the corresponding username to see if it fits. If you register with a unique username, it will store the hash+salt in the database for future use along with your username. When you successfully login, you will have a session with the variable "loggedIn" that ensures that you do not get redirected back to the login page when you try to access other pages (you can test this by changing the address bar to another page (e.g /tutee_list.html while logged out)
+    
 Division of Labor:
     Jerry Du: login backend, authentication and authorization, worked on tutee list front end and back end, request tutor front end and back end
     Gordon Chen: resources front end and back end, tutee list backend, update profile frontend and backend
